@@ -6,19 +6,29 @@ function Footer() {
   const currentPage = useLocation().pathname;
 
   const menuItems = [
-    { link: "/", name: "Home" },
     { link: "/About", name: "About" },
     { link: "/Tinkerings", name: "Tinkerings" },
-    { link: "/Blog", name: "Blog" },
     { link: "/Contact", name: "Contact" },
+    { link: "/Resume", name: "Resume" },
   ];
 
   return (
     <div className="w-full justify-center">
+      <div className="join bg-base-200 w-full justify-center">
+        <a className="badge badge-info" href="https://github.com/andrenrwn">
+          Github
+        </a>
+        <a className="badge badge-info" href="https://www.linkedin.com/in/andre-nurwono-31762bb/">
+          LinkedIn
+        </a>
+        <a className="badge badge-info" href="https://stackoverflow.com/users/22595101/andre-n">
+          StackOverflow
+        </a>
+      </div>
       <ul className="join bg-base-200 w-full justify-center">
-        {menuItems.map((menuItem,index) => {
+        {menuItems.map((menuItem, index) => {
           return (
-            <li key={'f'+index} className={"join-item btn " + (menuItem.link == currentPage ? "btn-active" : "")}>
+            <li key={"f" + index} className={"join-item btn " + (menuItem.link == currentPage ? "btn-active" : "")}>
               <Link to={menuItem.link}>{menuItem.name}</Link>
             </li>
           );
