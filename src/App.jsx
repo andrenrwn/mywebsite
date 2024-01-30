@@ -8,7 +8,7 @@ function App() {
   // The Outlet component will conditionally swap between the different pages according to the URL
   return (
     <div className="flex flex-col h-full">
-      <header>
+      <header className="justify-between">
         <h1 className="text-5xl font-bold fg-primary m-9 p-2">andrenrwn</h1>
         <Nav />
       </header>

@@ -13,10 +13,10 @@ function NavTabs() {
   ];
 
   return (
-    <ul role="tablist" className="tabs tabs-lifted tabs-lg font-bold bg-base-200">
+    <ul role="tablist" className="mymenu bg-transparent fg-base-100 tabs tabs-bordered tabs-lg font-bold bg-base-200">
       {menuItems.map((menuItem, index) => {
         return (
-          <li key={index} role="tab" className={"tab " + (menuItem.link == currentPage ? "tab-active" : "")}>
+          <li key={index} role="tab" className={"mymenu hover:bg-base-300/50 tab " + (menuItem.link == currentPage ? "tab-active" : "")}>
             <Link to={menuItem.link}>{menuItem.name}</Link>
           </li>
         );

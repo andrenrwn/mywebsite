@@ -27,7 +27,7 @@ header {
   align-items: baseline;
   background-color: var(--head-dark-color);
   min-height: 7rem;
-  align-items: end;
+  /* align-items: end; */
   background-image: linear-gradient(to left, var(--head-dark-color), black);
 }
 
@@ -35,6 +35,10 @@ header h1 {
   color: var(--head-color);
   background-color: var(--border-dark-color);
   background-image: linear-gradient(to left, var(--head-dark-color), black);
+}
+
+.mymenu {
+  color: var(--head-color);
 }
 
 body {
@@ -102,19 +106,19 @@ aside {
 
 /* style for any articles */
 .content article {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px;
-    padding: 5px;
-    text-transform: lowercase;
-    line-height: 1.5;
-    background-color: var(--head-color);
-  }
-  
-  article h2 {
-    font-size: 1.8rem;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 5px;
+  text-transform: lowercase;
+  line-height: 1.5;
+  background-color: var(--head-color);
+}
+
+article h2 {
+  font-size: 1.8rem;
+}
+
 /* Requirement: Photo or avatar */
 .photoavatar {
   float: right;
