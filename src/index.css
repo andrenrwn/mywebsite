@@ -33,5 +33,162 @@ header {
 
 header h1 {
   color: var(--head-color);
+  background-color: var(--border-dark-color);
   background-image: linear-gradient(to left, var(--head-dark-color), black);
+}
+
+body {
+  color: var(--head-dark-color);
+  background: var(--head-mid-color);
+  background-image: linear-gradient(to left, var(--head-mid-color), var(--head-dark-color));
+}
+
+/* the hero is a picture bar after the navigation bar */
+.hero {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 5rem;
+  /*background: url("../../assets/images/wall-texture-7DB3DA.jpg");*/
+  background: url("../../assets/images/green_plains_blue_sky.jpg");
+  background-color: var(--head-dark-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-repeat:repeat;*/
+  background-position-y: center;
+  opacity: 100%;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 1)));
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+/* hero subtitle */
+.hero h3 {
+  display: inline-block;
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0.2rem;
+  padding: 0.1rem;
+  background: var(--head-dark-color);
+  color: var(--head-color);
+  text-align: right;
+  opacity: 65%;
+}
+
+/* .aside contains a topic header */
+aside {
+  margin-top: 5px;
+  margin-right: 5px;
+  padding: 1%;
+  width: 23%;
+  flex: 0 0 23%;
+  min-height: 100%; /* stretch horizontally with content box */
+  float: left;
+  text-align: right;
+  color: var(--head-dark-color);
+  background-color: var(--head-color);
+  border-right: 0.5rem solid var(--head-dark-color);
+  background-image: linear-gradient(to left, var(--head-color), var(--head-dark-color));
+  /*background: url("../../assets/images/wall-texture-7DB3DA.jpg") repeat center;*/
+}
+
+/* .content includes the card menus and text articles */
+.content {
+  display: inline;
+  width: 73%;
+  padding: 0%;
+  flex: 1 1 73%; /* grow right to fill the 75% column */
+}
+
+/* Requirement: Photo or avatar */
+.photoavatar {
+  float: right;
+  max-height: 150px;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.photoavatar:hover {
+  -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 1)));
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+}
+
+/* ------------------------------------------
+   work cards behavior
+   ------------------------------------------ */
+.selectworks {
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* .card styles to select works */
+.card {
+  position: relative;
+  padding-top: 20px;
+  display: inline-block;
+  margin: 1%;
+  padding: 0;
+  width: calc(48% - 20px);
+  max-width: calc(48% - 20px);
+  height: 35vh;
+  max-height: 35vh;
+  overflow: hidden;
+  flex: 1 1 calc(48% - 20px);
+  border: 5px solid;
+  border-color: var(--head-dark-color);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 100%;
+  transition-property: all;
+  transition-duration: 0.1s;
+  transition-timing-function: linear;
+}
+
+.card:hover,
+.card:focus {
+  box-shadow: 5px 5px 5px var(--head-dark-color) inset;
+  border-width: 5px solid;
+  border-color: var(--border-dark-color);
+  opacity: 66%;
+  transition-property: all;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+}
+
+.cardimage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardlabel {
+  display: inline-block;
+  position: absolute;
+  bottom: 20px;
+  left: -5px;
+  color: var(--border-color);
+  padding: 10px 10px;
+  font-size: 20px;
+  /* border:solid 5px var(--border-dark-color); */
+  background-color: var(--border-dark-color);
+  max-width: 200px;
+  text-align: left;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.cardlabel details {
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }

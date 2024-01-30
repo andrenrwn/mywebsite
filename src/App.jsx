@@ -11,6 +11,7 @@ function App() {
       <header>
         <h1 className="text-5xl font-bold fg-primary m-9 p-2">andrenrwn</h1>
         <Nav />
+        <section className="hero"><h3>let's build web pages!</h3></section>
       </header>
       <main className="mx-3 flex flex-col min-h-screen">
         <Outlet />

@@ -16,10 +16,9 @@ function Footer() {
   return (
     <div className="w-full justify-center">
       <ul className="join bg-base-200 w-full justify-center">
-        {menuItems.map((menuItem) => {
-          console.log(currentPage);
+        {menuItems.map((menuItem,index) => {
           return (
-            <li className={"join-item btn " + (menuItem.link == currentPage ? "btn-active" : "")}>
+            <li key={'f'+index} className={"join-item btn " + (menuItem.link == currentPage ? "btn-active" : "")}>
               <Link to={menuItem.link}>{menuItem.name}</Link>
             </li>
           );

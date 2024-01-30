@@ -7,7 +7,6 @@ import './index.css';
 
 import App from './App';
 import Error from './pages/Error';
-import Home from './pages/Home';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Blog from './pages/Blog';
@@ -20,10 +19,6 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <Error />,
     children: [
-      {
-        index: true,
-        element: <Home />,
-      },
       {
         path: '/About',
         element: <About />,

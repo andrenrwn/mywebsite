@@ -6,7 +6,6 @@ function NavTabs() {
   const currentPage = useLocation().pathname;
 
   const menuItems = [
-    { link: "/", name: "Home" },
     { link: "/About", name: "About" },
     { link: "/Tinkerings", name: "Tinkerings" },
     { link: "/Blog", name: "Blog" },
@@ -14,18 +13,15 @@ function NavTabs() {
   ];
 
   return (
-      <div>
-        <ul role="tablist" className="tabs tabs-lifted tabs-lg font-bold bg-base-200">
-          {menuItems.map((menuItem) => {
-            console.log(currentPage);
-            return (
-              <li role="tab" className={"tab " + (menuItem.link == currentPage ? "tab-active" : "")}>
-                <Link to={menuItem.link}>{menuItem.name}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+    <ul role="tablist" className="tabs tabs-lifted tabs-lg font-bold bg-base-200">
+      {menuItems.map((menuItem, index) => {
+        return (
+          <li key={index} role="tab" className={"tab " + (menuItem.link == currentPage ? "tab-active" : "")}>
+            <Link to={menuItem.link}>{menuItem.name}</Link>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 
