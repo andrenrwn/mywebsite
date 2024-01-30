@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --head-dark-color: #0e507e;
+  --head-low-color: #286fa2;
+  --head-mid-color: #4c8ebd;
+  --head-hi-color: #7db3da;
+  --head-color: #c2dff3;
+  --border-color: white;
+  --border-dark-color: black;
+  --body-dark-color: #08884e;
+  --body-mid-color: #47c68c;
+  --body-color: #c0f5dd;
+  --body-dark-color2: #1b1e89;
+  --body-mid-color2: #5b5ec8;
+  --body-color2: #c8c9f5;
+}
+
+/* ------------------------------------------
+     <header> contains my name and the nav bar 
+     ----------------------------------------- */
+header {
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  background-color: var(--head-dark-color);
+  min-height: 7rem;
+  align-items: end;
+  background-image: linear-gradient(to left, var(--head-dark-color), black);
+}
+
+header h1 {
+  color: var(--head-color);
+  background-image: linear-gradient(to left, var(--head-dark-color), black);
+}
