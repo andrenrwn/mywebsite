@@ -144,25 +144,31 @@ export default function Tinkerings() {
   ];
 
   return (
-    <div className="">
-      <h1>Tinkerings</h1>
-      <h2>Some of the things I tinker with</h2>
-      {myworks.map((item) => {
-        return (
-          <section>
-            <a className="card" alt="coming soon" href="#headerid">
-              <label className="cardlabel">
-                <h3>{item.name}</h3>
-                <details>
-                  <summary>{item.technology}</summary>
-                  <p>{item.description}</p>
-                </details>
-              </label>
-              <img src={"../assets/images/" + item.image} className="cardimage" alt={item.altimage} />
-            </a>{" "}
-          </section>
-        );
-      })}
+    <div className="fg-primary text-primary">
+      <div>
+        <aside className="mt-3">
+          <h1 className="text-5xl">Tinkerings</h1>
+          <h2 className="text-3xl">(my works)</h2>
+        </aside>
+        <div className="grid grid-cols-2">
+          {myworks.map((item) => {
+            return (
+              <section className="m-2">
+                <a className="card" alt="coming soon" href={item.link} target="_blank">
+                  <label className="cardlabel">
+                    <h3 className="text-2xl font-bold">{item.name}</h3>
+                    <details>
+                      <summary className="">{item.technology}</summary>
+                      <p className="text-sm">{item.description}</p>
+                    </details>
+                  </label>
+                  <img src={"../assets/images/" + item.image} className="cardimage" alt={item.altimage} />
+                </a>{" "}
+              </section>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

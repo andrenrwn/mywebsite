@@ -100,6 +100,21 @@ aside {
   flex: 1 1 73%; /* grow right to fill the 75% column */
 }
 
+/* style for any articles */
+.content article {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 5px;
+    text-transform: lowercase;
+    line-height: 1.5;
+    background-color: var(--head-color);
+  }
+  
+  article h2 {
+    font-size: 1.8rem;
+  }
+  
 /* Requirement: Photo or avatar */
 .photoavatar {
   float: right;
@@ -129,17 +144,7 @@ aside {
 
 /* .card styles to select works */
 .card {
-  position: relative;
-  padding-top: 20px;
-  display: inline-block;
-  margin: 1%;
-  padding: 0;
-  width: calc(48% - 20px);
-  max-width: calc(48% - 20px);
-  height: 35vh;
-  max-height: 35vh;
   overflow: hidden;
-  flex: 1 1 calc(48% - 20px);
   border: 5px solid;
   border-color: var(--head-dark-color);
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.75);

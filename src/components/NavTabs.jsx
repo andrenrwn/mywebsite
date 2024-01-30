@@ -8,8 +8,8 @@ function NavTabs() {
   const menuItems = [
     { link: "/About", name: "About" },
     { link: "/Tinkerings", name: "Tinkerings" },
-    { link: "/Blog", name: "Blog" },
     { link: "/Contact", name: "Contact" },
+    { link: "/Resume", name: "Resume" },
   ];
 
   return (
