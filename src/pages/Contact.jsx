@@ -19,7 +19,7 @@ export default function Contact() {
                 </a>
               </p>
             </div>
-            <img src="./assets/images/photo_avatar.png" class="photoavatar" alt="my profile photo" target="_blank" />
+            <img src="./assets/images/photo_avatar.png" className="photoavatar" alt="my profile photo" target="_blank" />
           </article>
         </section>
       </div>

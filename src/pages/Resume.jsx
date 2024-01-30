@@ -24,7 +24,7 @@ export default function Resume() {
             </p>
             <a href="./assets/resume_andrenrwn.pdf" className="my-3 btn btn-primary">Download Resume</a>
           </div>
-          <img src="./assets/images/photo_avatar.png" class="photoavatar" alt="my profile photo" target="_blank"/>
+          <img src="./assets/images/photo_avatar.png" className="photoavatar" alt="my profile photo" target="_blank"/>
         </article>
       </section>
     </div>

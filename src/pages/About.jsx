@@ -15,7 +15,7 @@ export default function About() {
                 ideas are greatly appreciated.
               </p>
             </div>
-            <img src="./assets/images/photo_avatar.png" class="photoavatar" alt="my profile photo" />
+            <img src="./assets/images/photo_avatar.png" className="photoavatar" alt="my profile photo" />
           </article>
         </section>
       </div>
