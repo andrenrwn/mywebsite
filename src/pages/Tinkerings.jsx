@@ -144,7 +144,7 @@ export default function Tinkerings() {
   ];
 
   return (
-    <div>
+    <div className="">
       <h1>Tinkerings</h1>
       <h2>Some of the things I tinker with</h2>
       {myworks.map((item) => {
@@ -158,7 +158,7 @@ export default function Tinkerings() {
                   <p>{item.description}</p>
                 </details>
               </label>
-              <img src={"../assets/images/" + item.image} class="cardimage" alt={item.altimage} />
+              <img src={"../assets/images/" + item.image} className="cardimage" alt={item.altimage} />
             </a>{" "}
           </section>
         );
