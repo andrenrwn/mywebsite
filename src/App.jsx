@@ -17,7 +17,7 @@ function App() {
       <main className="mx-3 flex flex-col min-h-screen">
         <Outlet />
       </main>
-      <footer clasName="mt-auto">
+      <footer className="mt-auto">
         <Footer />
       </footer>
     </div>

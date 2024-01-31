@@ -1,4 +1,5 @@
 import { useState } from "react";
+import validateEmail from "../utils/utils.js";
 
 export default function Contact() {
   // Set state variables for name, email and message using `useState`
@@ -33,6 +34,23 @@ export default function Contact() {
     setMessage("");
   };
 
+  const handleEmailValidation = (e) => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    e.preventDefault();
+
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = e.target;
+
+
+    // return a set state value result based on input field
+    let res;
+    if (name === "email") {
+      if (!validateEmail(value)) {
+        alert(`Warning: Your email ${email} seems invalid, please recheck`);
+      }
+    }
+  };
+
   return (
     <div className="">
       <div>
@@ -54,7 +72,7 @@ export default function Contact() {
                     email +
                     "&body=Hello, this is " +
                     guestname +
-                    "" +
+                    "\n\n" +
                     message
                   }
                 >
@@ -68,9 +86,9 @@ export default function Contact() {
               alt="my profile photo"
               target="_blank"
             />
-            <div className="container">
+            <div className="container gap-2">
               <h1>Hello {guestname}, please enter your contact information:</h1>
-              <form className="form flex flex-col w-full justify-center" onSubmit={handleFormSubmit}>
+              <form className="form flex flex-col w-full justify-center gap-2" onSubmit={handleFormSubmit}>
                 <input
                   className="input input-bordered input-info w-full"
                   value={guestname}
@@ -84,6 +102,7 @@ export default function Contact() {
                   value={email}
                   name="email"
                   onChange={handleInputChange}
+                  onBlur={handleEmailValidation}
                   type="text"
                   placeholder="email"
                 />
