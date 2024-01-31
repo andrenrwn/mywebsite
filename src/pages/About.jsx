@@ -1,4 +1,8 @@
+import useDocumentTitle from "../utils/useDocumentTitle";
+
 export default function About() {
+  useDocumentTitle("andrenrwn");
+
   return (
     <div className="">
       <div>

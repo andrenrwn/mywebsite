@@ -1,7 +1,10 @@
 import { useState } from "react";
-import validateEmail from "../utils/utils.js";
+import { validateEmail } from "../utils/utils.js";
+import useDocumentTitle from "../utils/useDocumentTitle";
 
 export default function Contact() {
+  useDocumentTitle("andrenrwn");
+
   // Set state variables for name, email and message using `useState`
   const [guestname, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -34,19 +37,28 @@ export default function Contact() {
     setMessage("");
   };
 
-  const handleEmailValidation = (e) => {
+  const handleValidation = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
     // Getting the value and name of the input which triggered the change
     const { name, value } = e.target;
 
-
     // return a set state value result based on input field
     let res;
-    if (name === "email") {
-      if (!validateEmail(value)) {
+    if (name === "guestname") {
+      if (!value) {
+        alert(`It would be nice to know your name`);
+      }
+    } else if (name === "email") {
+      if (!value) {
+        alert(`Don't forget to enter your e-mail address`);
+      } else if (!validateEmail(value)) {
         alert(`Warning: Your email ${email} seems invalid, please recheck`);
+      }
+    } else if (name === "message") {
+      if (!value) {
+        alert(`It would be great if you could add a message`);
       }
     }
   };
@@ -94,6 +106,7 @@ export default function Contact() {
                   value={guestname}
                   name="guestname"
                   onChange={handleInputChange}
+                  onBlur={handleValidation}
                   type="text"
                   placeholder="Name"
                 />
@@ -102,7 +115,7 @@ export default function Contact() {
                   value={email}
                   name="email"
                   onChange={handleInputChange}
-                  onBlur={handleEmailValidation}
+                  onBlur={handleValidation}
                   type="text"
                   placeholder="email"
                 />
@@ -111,6 +124,7 @@ export default function Contact() {
                   value={message}
                   name="message"
                   onChange={handleInputChange}
+                  onBlur={handleValidation}
                   type="text"
                   placeholder="type a message"
                 />
@@ -122,7 +136,7 @@ export default function Contact() {
                     email +
                     "&body=Hello, this is " +
                     guestname +
-                    "" +
+                    ",\n\n" +
                     message
                   }
                 >

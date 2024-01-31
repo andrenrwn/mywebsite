@@ -1,6 +1,8 @@
 import { useRouteError } from 'react-router-dom';
+import validateEmail from "../utils/utils.js";
 
 export default function ErrorPage() {
+  useDocumentTitle("andrenrwn");
   const error = useRouteError();
   console.error(error);
 

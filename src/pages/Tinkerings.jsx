@@ -1,4 +1,7 @@
+import useDocumentTitle from "../utils/useDocumentTitle";
+
 export default function Tinkerings() {
+  useDocumentTitle("andrenrwn");
   const myworks = [
     {
       name: "accessibility",
