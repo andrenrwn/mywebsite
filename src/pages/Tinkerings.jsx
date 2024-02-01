@@ -129,6 +129,14 @@ export default function Tinkerings() {
       link: "https://github.com/andrenrwn/gbooks_gql",
     },
     {
+      name: "QuoteMe",
+      technology: "MERN, react, graphql, stripe",
+      description: "Group project of a social media site to get emotional affirmations and share one's emotional journey. Implemented dashboard&journal w/ graphql and openAi",
+      image: "work24_card_project3.png",
+      altimage: "QuoteMe website. Signup, log in, and share your feelings",
+      link: "https://github.com/charleshuurman/QuoteMe",
+    },
+    {
       name: "coming soon",
       technology: "",
       description: "This is a placeholder for future works.",
