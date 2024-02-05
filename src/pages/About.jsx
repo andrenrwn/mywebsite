@@ -10,7 +10,7 @@ export default function About() {
           <h1 className="text-5xl">About</h1>
         </aside>
         <section className="content m-2">
-          <article className="">
+          <article className="max-md:flex-wrap">
             <div className="m-2">
               <h2>Welcome to my website</h2>
               <p className="mt-3">

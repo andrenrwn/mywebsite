@@ -154,6 +154,7 @@ export default function Tinkerings() {
     // },
   ];
 
+  // Displays my list of works in a grid format
   return (
     <div className="fg-primary text-primary">
       <div>
@@ -161,10 +162,10 @@ export default function Tinkerings() {
           <h1 className="text-5xl">Tinkerings</h1>
           <h2 className="text-3xl">(my works)</h2>
         </aside>
-        <div className="grid grid-cols-2">
-          {myworks.map((item) => {
+        <div className="grid grid-cols-2 max-lg:grid-cols-1">
+          {myworks.map((item, index) => {
             return (
-              <section className="m-2">
+              <section key={index} className="m-2">
                 <a className="card" alt="coming soon" href={item.link} target="_blank">
                   <label className="cardlabel">
                     <h3 className="text-2xl font-bold">{item.name}</h3>

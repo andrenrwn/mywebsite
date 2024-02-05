@@ -47,18 +47,34 @@ export default function Contact() {
     // return a set state value result based on input field
     let res;
     if (name === "guestname") {
+      const nameElement = document.getElementById("namewarning");
       if (!value) {
-        alert(`It would be nice to know your name`);
+        nameElement.textContent = `It would be nice to know your name`;
+        nameElement.classList.add("bg-warning");
+      } else {
+        nameElement.textContent = `Your name is: ${guestname}`;
+        nameElement.classList.remove("bg-warning");
       }
     } else if (name === "email") {
+      const emailElement = document.getElementById("emailwarning");
       if (!value) {
-        alert(`Don't forget to enter your e-mail address`);
+        emailElement.textContent = `Don't forget to enter your e-mail address`;
+        emailElement.classList.add("bg-warning");
       } else if (!validateEmail(value)) {
-        alert(`Warning: Your email ${email} seems invalid, please recheck`);
+        emailElement.textContent = `Warning: Your email "${email}" seems invalid, please recheck`;
+        emailElement.classList.add("bg-warning");
+      } else {
+        emailElement.textContent = `your email: ${email}`;
+        emailElement.classList.remove("bg-warning");
       }
     } else if (name === "message") {
+      const messageElement = document.getElementById("messagewarning");
       if (!value) {
-        alert(`It would be great if you could add a message`);
+        messageElement.textContent = `It would be great if you could add a message`;
+        messageElement.classList.add("bg-warning");
+      } else {
+        messageElement.textContent = `Your message: ${message}`;
+        messageElement.classList.remove("bg-warning");
       }
     }
   };
@@ -84,13 +100,14 @@ export default function Contact() {
                     email +
                     "&body=Hello, this is " +
                     guestname +
-                    "\n\n" +
+                    ", %0A%0A" +
                     message
                   }
                 >
                   141073152+andrenrwn@users.noreply.github.com
                 </a>
               </p>
+              <p>or, you can post questions on my Github repository: <a className="font-bold" href="https://github.com/andrenrwn/mywebsite/issues">https://github.com/andrenrwn/mywebsite/issues</a></p>
             </div>
             <img
               src="./assets/images/photo_avatar.png"
@@ -99,8 +116,9 @@ export default function Contact() {
               target="_blank"
             />
             <div className="container gap-2">
-              <h1>Hello {guestname}, please enter your contact information:</h1>
+              <h1 className="my-2">Hello {guestname}, please enter your contact information:</h1>
               <form className="form flex flex-col w-full justify-center gap-2" onSubmit={handleFormSubmit}>
+                <p id="namewarning" className="rounded-box bg-transparent">enter your name</p>
                 <input
                   className="input input-bordered input-info w-full"
                   value={guestname}
@@ -110,6 +128,7 @@ export default function Contact() {
                   type="text"
                   placeholder="Name"
                 />
+                <p id="emailwarning" className="rounded-box bg-transparent">enter your email</p>
                 <input
                   className="input input-bordered input-info w-full"
                   value={email}
@@ -119,6 +138,7 @@ export default function Contact() {
                   type="text"
                   placeholder="email"
                 />
+                <p id="messagewarning" className="rounded-box bg-transparent">add your message here</p>
                 <input
                   className="input input-bordered input-info w-full"
                   value={message}

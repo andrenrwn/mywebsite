@@ -5,8 +5,8 @@ export default function Resume() {
       <aside className="mt-3">
         <h1 className="text-5xl">Resume</h1>
       </aside>
-      <section className="content m-2">
-        <article className="">
+      <section className="flex flex-1 content m-2">
+        <article className="max-md:flex-wrap">
           <div className="m-2">
             <h2>Tech is interesting! Here are some I have worked with:</h2>
             <p className="mt-3">
